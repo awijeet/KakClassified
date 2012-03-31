@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  ad: 
+  recomment_value: 1
+
+two:
+  user: 
+  ad: 
+  recomment_value: 1

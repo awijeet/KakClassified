@@ -1,0 +1,14 @@
+<%= render "/home/left" %>
+<div class="content_region" style="width:340px; overflow: hidden;float: left">
+<% if @ads.empty? %>
+<% else %>
+        <% @ads.each do |ads| %>
+                <h4><%= link_to ads.name, "/show/#{ads.id}" %></h4>
+                <div class="link_description">
+                        <%= ads.description %>
+                </div>
+        <% end %>
+<% end %>
+<%= paginate @ads %>
+</div>
+<%#= render "/home/ads" %>

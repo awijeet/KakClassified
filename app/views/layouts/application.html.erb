@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= page_title %></title>
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", :cache => true %>
+  <%= javascript_include_tag :all, :cache => true %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <%= render :partial => "/layouts/header" %>   
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <!--<div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> Web App.</p>
+          </div>      
+        </div>-->
+      </div>
+     <!-- <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>-->
+    </div>    
+  </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+<%= render "/home/left" %>
+<div></div>

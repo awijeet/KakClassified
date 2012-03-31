@@ -1,0 +1,24 @@
+<%= render "/home/left" %>
+<div class="contnets">
+<h4>
+<%= link_to "Home", "/" %> >>
+<%= link_to @ad.category.name, "/?category=#{@ad.category.id}" %>
+  >> <%= link_to @ad.subcategory.name, "/?subcategory=#{@ad.subcategory.id}" %></h4>
+<h4>
+<h3><%=@ad.name %></h3>
+  <%= @ad.description %>
+</h4>
+<br />
+<lebel><%= link_to "I RECOMMEND this product", "#", :id => "recommend" %> <div class="recommend_counter">(<%= @recommend_counter %>)</div></label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<lebel><%= link_to "I  HATE this product", "#", :id => "hate" %></label>
+</div>
+<script>
+  $("#recommend").click(function(){
+   process_url = "/recommend/<%=params[:id]%>";
+   //alert(process_url) ;
+   $.getScript(process_url);
+  });
+  $("#hate").click(function(){
+   alert("Hi, I hate this product");
+  });
+</script>

@@ -1,0 +1,17 @@
+<div style="float: left;
+    overflow: hidden;
+    width: 200px;min-height: 450px">
+<ul>
+  <h3>Category</h3>
+<% Category.all.each do |category| %>
+  <li><%= link_to category.name, "/?category=#{category.id}",:class => "#{category.name}" %></li>
+<% end %>
+</ul>
+
+<ul>
+  <h3>Sub Category</h3>
+<% Subcategory.all.each do |subcategory| %>
+  <li><%= link_to subcategory.name, "/?subcategory=#{subcategory.id}", :class => "#{subcategory.name}" %></li>
+<% end %>
+</ul>
+</div>

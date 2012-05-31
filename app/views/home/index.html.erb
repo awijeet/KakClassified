@@ -4,6 +4,7 @@
 <% else %>
         <% @ads.each do |ads| %>
                 <h4><%= link_to ads.name, "/show/#{ads.id}" %></h4>
+                 <%= image_tag ads.image.url(:thumb) %>
                 <div class="link_description">
                         <%= ads.description %>
                 </div>

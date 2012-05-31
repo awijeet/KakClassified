@@ -4,8 +4,8 @@
 <ul>
   <h3>Category</h3>
 <% Category.all.each do |category| %>
-  <li><h4><%= link_to category.name, "/?category=#{category.id}",:class => "#{category.name}" %></h4>
-  <ul>
+  <li class="category"><h4><%= link_to category.name, "/?category=#{category.id}",:class => "#{category.name}" %></h4>
+  <ul style="display:none">
     <% category.subcategories.each do |subcategory| %>
         <li><%= link_to subcategory.name, "/?subcategory=#{subcategory.id}", :class => "#{subcategory.name}" %></li>
     <% end %>
@@ -21,3 +21,9 @@
 <%# end %>
 </ul> -->
 </div>
+<script>
+  $("li.category").click(function(){
+  $(this).children().show();
+  return false;
+  });
+</script>

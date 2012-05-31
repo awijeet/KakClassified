@@ -5,6 +5,7 @@
 <%= link_to @ad.category.name, "/?category=#{@ad.category.id}" %>
   >> <%= link_to @ad.subcategory.name, "/?subcategory=#{@ad.subcategory.id}" %></h4>
 <h4>
+<%= image_tag @ad.image.url(:medium) %>
 <h3><%=@ad.name %></h3>
   <%= @ad.description %>
 </h4>
